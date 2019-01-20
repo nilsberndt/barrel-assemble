@@ -1,0 +1,4 @@
+# NODES MODULES #
+######################
+dist/
+node_modules/

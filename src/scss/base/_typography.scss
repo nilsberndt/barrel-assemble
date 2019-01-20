@@ -1,0 +1,217 @@
+html {
+  font-size: 100%;
+}
+
+body {
+  font-family: $f-sans;
+  font-weight: 300;
+  font-size: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/**
+Heading
+ */
+
+%heading {
+  font-family: $f-sans-heading;
+  font-weight: 700;
+}
+
+/**
+Paragraph Thin
+ */
+
+%paragraph {
+  font-family: $f-sans;
+  font-weight: 300;
+}
+
+/**
+Paragraph Medium
+ */
+
+%paragraph-medium {
+  font-family: $f-sans;
+  font-weight: 500;
+}
+
+.main-title {
+  @extend %heading;
+  @include rem(35, 40);
+  font-weight: 700;
+  text-transform: uppercase;
+  @include breakpoint('m') {
+    @include rem(35, 60);
+  }
+  @include breakpoint('l') {
+    @include rem(60, 60);
+  }
+}
+
+.main-heading {
+  @extend %heading;
+  @include rem(22, 25);
+  @include breakpoint('m') {
+    @include rem(40, 40);
+  }
+}
+
+.sub-heading {
+  @extend %heading;
+  @include rem(20, 25);
+  font-weight: 700;
+  text-transform: uppercase;
+  @include breakpoint('l') {
+    @include rem(26, 32);
+  }
+}
+
+.sub-heading2 {
+  @extend %heading;
+  @include rem(15, 15);
+  font-weight: 700;
+  text-transform: uppercase;
+  @include breakpoint('l') {
+    @include rem(20, 20);
+  }
+}
+
+.label {
+  @extend %heading;
+  @include rem(13, 19);
+  text-transform: uppercase;
+  color: $c-dblue3;
+  @include breakpoint('l') {
+    @include rem(15, 19);
+    letter-spacing: 1px;
+  }
+}
+
+.p {
+  @extend %paragraph;
+  @include rem(17, 24);
+}
+
+.p-lead {
+  @extend %paragraph-medium;
+  @include rem(19, 30);
+}
+
+.sub-title {
+  @include rem(22, 25);
+  font-weight: 700;
+  @include breakpoint('s') {
+    @include rem(25, 38);
+  }
+  @include breakpoint('l') {
+    @include rem(40, 40);
+  }
+}
+
+.score-heading {
+  @extend %heading;
+  @include rem(190, 160);
+}
+
+
+.menu-item {
+  @include rem(12, 17);
+  font-weight: 700;
+  font-family: $f-old-sans;
+}
+
+.footer-item {
+  @include rem(12, 15);
+  font-family: $f-old-sans;
+}
+
+.footer-policy {
+  @include rem(13, 15);
+  font-family: $f-old-sans;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.wysiwyg {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  .container {
+    padding: 0;
+  }
+  h1 {
+    @extend .main-title;
+  }
+  h2 {
+    @extend .main-heading;
+  }
+  h3 {
+    @extend .sub-heading;
+  }
+  h4 {
+    @extend .sub-heading2;
+  }
+  h1, h2, h3, h4 {
+    margin-bottom: 1em;
+  }
+  p {
+    @extend .p;
+    margin-bottom: 1em;
+  }
+  .lead {
+    @extend .p-lead;
+  }
+}
+.red-block {
+  @extend .transition-all;
+  z-index: 20;
+  width: 55px;
+  height: 55px;
+  background-color: $c-red;
+  @include breakpoint('m') {
+    width: 68px;
+    height: 68px;
+  }
+  @include breakpoint('l') {
+    width: 85px;
+    height: 85px;
+  }
+  &:before {
+    @extend .transition-all;
+    content: '';
+    width: 65px;
+    height: 65px;
+    background-color: rgba($c-red, .5);
+    @include breakpoint('m') {
+      width: 85px;
+      height: 85px;
+    }
+    @include breakpoint('l') {
+      width: 107px;
+      height: 107px;
+    }
+  }
+  &:after {
+    @extend .transition-all;
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-35%, -50%);
+    border-top: 9.5px solid transparent;
+    border-bottom: 9.5px solid transparent;
+    border-left: 18.5px solid $c-white;
+    @include breakpoint('m') {
+      border-top-width: 11px;
+      border-bottom-width: 11px;
+      border-left-width: 22px;
+    }
+    @include breakpoint('l') {
+      border-top: 15px solid transparent;
+      border-bottom: 15px solid transparent;
+      border-left: 30px solid $c-white;
+    }
+  }
+}

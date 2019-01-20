@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <link rel="canonical" href="{{site.root}}{{meta-url}}" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
+  <!-- OPTIONAL
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no" />
+  -->
+  {{> social-meta }}
+  {{> favicons }}
+  {{> content_for_header }}
+  <link rel="stylesheet" href="{{site.root}}assets/css/main.min.css">
+  <title>{{title}}</title>
+</head>
+<body>
+  {{#if background}}
+    <figure class="body__bg">
+      <img data-bg="true" data-src="{{background}}" alt="">
+    </figure>
+  {{/if}}
+  <div class="wrapper js-wrapper">
+    {{#with header}}
+      {{> header }}
+    {{/with}}
+    <main class="main">
+      <div class="main__inner js-main__inner">
+        {% body %}
+      </div>
+    </main>
+    {{> footer }}
+  </div>
+</body>
+</html>
+

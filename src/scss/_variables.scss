@@ -1,0 +1,60 @@
+// Breakpoints
+
+$breakpoints: (
+  'xs': 320,
+  's': 600,
+  'sm': 800,
+  'm': 1000,
+  'l': 1280,
+  'xl': 1440
+);
+
+$grid-gutters: (
+  'xs': 20,
+  's': 40
+);
+
+$grid-col: (
+  'xs': 2,
+  's': 6,
+  'sm': 6,
+  'm': 12
+);
+
+$container-max-width: 1440px;
+$container-gutter: (
+  'xs': 40,
+  's': 80,
+  'sm': 100,
+  'm': 120,
+  'l': 160
+);
+
+$font-base: 16;
+$f-sans: 'Futura PT', Arial, Helvetica, sans-serif;
+$f-sans-heading: 'Futura PT Cond', Arial, Helvetica, sans-serif;
+
+$f-old-sans: 'Arial', Helvetica, sans-serif; // Default font for header and footer partials only
+
+$c-black: #000;
+$c-white: #FFF;
+
+$c-grey: #F4F4EF;
+$c-purple: #582E71;
+$c-purple2: #703692;
+$c-orange: #F19430;
+$c-purple3: #63347C;
+$c-purple4: #7C3E9C;
+$c-purple5: #532569;
+$c-purple-light: #89659A;
+$c-dblue: #111054;
+$c-dblue2: #121057;
+$c-dblue3: #100C5E;
+$c-lgreen: #C8EB53;
+$c-lgreen2: #E3FFEB;
+$c-green: #3FB660;
+$c-green2: #C9E95E;
+$c-red: #E73C2A;
+$c-red2: #EA452E;
+$c-pink-light: #F8BFB7;
+

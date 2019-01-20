@@ -1,0 +1,107 @@
+html, body {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  color: $c-dblue3;
+
+  &.page-template, .page-template {
+    .main {
+      background: rgba(darken($c-lgreen, 10%), 0.75);
+    }
+  }
+
+  &.quiz-template, .quiz-template {
+    .main {
+      background-color: $c-green2;
+    }
+  }
+  &.quiz-template--result, .quiz-template--result {
+    background-image: url('../img/bg-page.jpg');
+    .main {
+      background: rgba(darken($c-lgreen, 10%), 0.75);
+    }
+  }
+  &.interactive-template, .interactive-template {
+    .main {
+      background-color: $c-green2;
+    }
+  }
+}
+
+.container {
+  position: relative;
+  margin: 0 auto;
+  @each $name, $size in $container-gutter {
+    @include breakpoint( $name ) {
+      padding: 0 #{$size / 2}px;
+    }
+  }
+  @include breakpoint( 'l' ) {
+    max-width: $container-max-width;
+  }
+}
+
+%col-gutter {
+  @each $breakpoint, $gutter in $grid-gutters {
+    @include breakpoint( $breakpoint ) {
+      padding-left: #{ $gutter / 2 }px;
+      padding-right: #{ $gutter / 2 }px;
+    }
+  }
+}
+
+.wrapper,
+.main {
+  display: flex;
+  flex-direction: column;
+  flex: 1 0 auto;
+}
+
+.wrapper {
+  z-index: 1;
+  overflow-y: auto;
+  position: relative;
+  height: 100%;
+}
+
+.main__inner {
+  display: flex;
+  flex-direction: column;
+  flex: 1 0 auto;
+  position: relative;
+  min-height: calc(100% - 92px);
+  @include breakpoint( 's' ) {
+    overflow: hidden;
+    min-height: calc(100% - 100px);
+  }
+  @include breakpoint( 'm' ) {
+    min-height: calc(100% - 32px);
+  }
+}
+
+.grid {
+  @each $name, $size in $grid-gutters {
+    @include breakpoint( $name ) {
+      margin-left: -#{$size / 2}px;
+      margin-right: -#{$size / 2}px;
+    }
+  }
+}
+
+.body__bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-position: center;
+  background-size: cover;
+  img {
+    visibility: hidden;
+  }
+  z-index: 0;
+}

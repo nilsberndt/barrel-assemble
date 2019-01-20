@@ -1,0 +1,50 @@
+.button {
+  @extend .label;
+  @extend .transition-all;
+  display: inline-block;
+  padding: 14px 45px 16px;
+  min-width: 199px;
+  color: $c-white;
+  background: $c-purple3;
+  border-radius: 25px;
+  border: none;
+  text-transform: uppercase;
+  text-align: center;
+  &:hover {
+    background: $c-purple4;
+  }
+}
+
+.button-outline {
+  @extend .transition-all;
+  padding: 13px 80px;
+  border: 2px solid $c-purple3;
+  color: $c-purple3;
+  position: relative;
+  background: transparent;
+  overflow: hidden;
+  &:before {
+    @extend .transition-all;
+    content: '';
+    position: absolute;
+    top: 35%;
+    left: 15%;
+  }
+  &:hover {
+    color: $c-white;
+  }
+}
+
+.button-disabled {
+  opacity: .5;
+  pointer-events: none;
+  user-select: none;
+  cursor: none;
+  &:hover {
+    background: $c-purple3;
+  }
+}
+
+
+
+
