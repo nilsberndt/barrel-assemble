@@ -28,9 +28,9 @@
     "jscs": "jscs src/js/**/*.js src/js/*.js > jscs.js || true",
     "jshint:watch": "onchange './src/js/**/*.js' -- npm run jshint",
     "jshint": "jshint src/js/**/*.js src/js/*.js > jshint.js || true",
-    "css:compile": "node-sass src/scss/main.scss $npm_package_config_assetpath/css/main.css",
-    "css:prefix": "postcss --local-plugins -u autoprefixer -o $npm_package_config_assetpath/css/main.css $npm_package_config_assetpath/css/main.css",
-    "css:minify": "cleancss -o $npm_package_config_assetpath/css/main.min.css $npm_package_config_assetpath/css/main.css",
+    "css:compile": "node-sass src/scss/main.scss dist/assets/css/main.css",
+    "css:prefix": "postcss --local-plugins -u autoprefixer -o dist/assets/css/main.css dist/assets/css/main.css",
+    "css:minify": "cleancss -o dist/assets/css/main.min.css dist/assets/css/main.css",
     "css:build": "npm run css:compile && npm run css:prefix && npm run css:minify",
     "css:dev": "onchange './src/scss/**/*.scss' -- npm run css:build"
   },
@@ -38,6 +38,7 @@
     "@shopify/draggable": "^1.0.0-beta.4",
     "es6-promise": "^4.2.4",
     "flickity": "^2.0.10",
+    "grunt": "^1.0.3",
     "layzr.js": "^2.2.2"
   },
   "devDependencies": {
